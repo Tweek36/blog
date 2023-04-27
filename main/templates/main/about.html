@@ -1,0 +1,29 @@
+{% extends 'main/default.html' %}
+{% load static %}
+
+{% block title %}About us{% endblock %}
+
+{% block link %}<link rel="stylesheet" href="{% static 'main/css/about.css' %}">{% endblock %}
+
+{% block body %}
+    <main class="about">
+        <h1>Sites that we were inspired by</h1>
+        <div class="about__links-list">
+            <div class="links-list__element">
+                <a href="https://www.dns-shop.ru/" target="_blank" class="links-lins__link">
+                    <img src="{% static 'main/img/dns.png' %}" alt="" class="links-list__img">
+                </a>
+            </div>
+            <div class="links-list__element">
+                <a href="https://www.wildberries.ru/" target="_blank" class="links-lins__link">
+                    <img src="{% static 'main/img/wb.png' %}" alt="" class="links-list__img">
+                </a>
+            </div>
+            <div class="links-list__element">
+                <a href="https://www.ozon.ru/" target="_blank" class="links-lins__link">
+                    <img src="{% static 'main/img/ozon.png' %}" alt="" class="links-list__img">
+                </a>
+            </div>
+        </div>
+    </main>
+{% endblock %}

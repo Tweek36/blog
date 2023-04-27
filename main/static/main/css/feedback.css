@@ -1,0 +1,28 @@
+.form__element {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.form__element:has(.form__checkbox) {
+    display: flex;
+    flex-direction: row;
+}
+
+.form__element:has(span) {
+    display: flex;
+    flex-direction: row;
+}
+
+.form__response {
+    color: #33bba4bf;
+}
+
+.form {
+    width: 33%;
+}
+
+label {
+    margin-right: 10px;
+}
+

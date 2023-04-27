@@ -1,0 +1,40 @@
+{% load static %}
+
+{% block login %}
+<form method="post" class="modal" id="login">
+    {% csrf_token %}
+    <div class="modal-top">
+        <div class="modal-close">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
+                <g><path d="M25.7,841.5L841.5,25.7c21-21,54.9-21,75.9,0l57,56.9c20.9,21,20.9,54.9,0,75.9L158.5,974.3c-21,21-54.9,21-75.9,0l-56.9-56.9C4.8,896.4,4.8,862.4,25.7,841.5z"/><path d="M158.5,25.7l815.8,815.8c20.9,20.9,20.9,54.9,0,75.8l-57,56.9c-20.9,21-54.9,21-75.9,0L25.7,158.5c-21-21-21-54.9,0-75.9l56.9-56.9C103.6,4.7,137.6,4.7,158.5,25.7z"/></g>
+            </svg>
+        </div>
+        <div class="modal-logo">
+            <img src="{% static 'main/img/logo.png' %}" alt="" class="modal-logo__img">
+            <span class="modal-logo__text">Store</span>
+        </div>
+    </div>
+
+    <div class="modal-field">
+        {{ log.username }}
+        <lable class="modal-field__lable" for="username">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
+                <g><path d="M500,544.5c-124,0-224.6-99.7-224.6-222.7C275.4,198.7,376,99,500,99c124,0,224.6,99.8,224.6,222.7C724.6,444.8,624,544.5,500,544.5L500,544.5L500,544.5z M500,10c-173.6,0-314.4,139.6-314.4,311.9c0,172.2,140.8,311.8,314.4,311.8c173.7,0,314.4-139.6,314.4-311.8C814.4,149.6,673.6,10,500,10L500,10L500,10z M500,544.5C251.9,544.5,50.8,744,50.8,990h89.8c0-196.8,160.9-356.4,359.4-356.4S859.3,793.2,859.3,990h89.9C949.2,744,748.1,544.5,500,544.5L500,544.5L500,544.5z"/></g>
+            </svg>
+        </lable>
+    </div>
+    <div class="modal-field">
+        {{ log.password }}
+        <lable class="modal-field__lable" for="password">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
+                <g><path d="M829.9,437.1l-542.8-1c-0.2-73.2-19.9-186.8,42.5-255.6c38-42,102.1-85.3,170.5-85.3c100.9,0,176.4,76.2,212.9,170.4c10.7,27.2,20.1,41.9,42.7,42.6c56.7,1.8,53.2-58,42.5-85.2C745.4,86.9,646.4,10,500,10c-99.5,0-154.3,20.4-213,85.2c-89.9,99-85.5,259.1-85.2,340.8l-31.7,1c-29.6,0-53.6,23.7-53.6,52.8V937c0,29.3,24,53,53.6,53h659.7c29.5,0,53.5-23.7,53.5-53V489.8C883.4,460.7,859.5,437.1,829.9,437.1z M798.3,862.1c0,11.7-4,21.8-12.5,30.1c-8.3,8.4-18.5,12.5-30.1,12.5H244.5c-11.8,0-21.8-4-30.1-12.5c-8.3-8.3-12.5-18.3-12.5-30.1V563.9c0-23.4,19.1-42.5,42.6-42.5h511.2c23.4,0,42.5,19.1,42.5,42.5V862.1z"/></g>
+            </svg>
+        </lable>
+    </div>
+    <button type="submit" class="modal-button" id="submit" name="submit" value="login">Login</button>
+    <div class="modal-field-question">
+        <a class="modal-field-question__text" id="change">Sign up</a>
+        <a class="modal-field-question__text" id="resetpassword">Forgot password?</a>
+    </div>
+</form>
+{% endblock %}

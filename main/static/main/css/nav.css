@@ -1,0 +1,48 @@
+.navigator {
+    position: absolute;
+    display: flex;
+    background: #181818;
+    width: 75vw;
+    padding: 1%;
+    color: #fff;
+    border: 5px solid #4d4d4d;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top: 0;
+    align-self: center;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 9;
+}
+
+.logo__img {
+    width: 64px;
+}
+
+.navigator__login {
+    display: flex;
+    align-items: center;
+}
+
+.navigator__login:hover {
+    cursor: pointer;
+}
+
+.navigator__login svg {
+    width: 48px;
+}
+
+.navigator .links {
+    width: -webkit-fill-available;
+    padding: 0 20px;
+}
+
+.navigator__link {
+    color: #33bba4;
+    margin-right: 10px;
+}
+
+.header-login__text {
+    margin: 0 !important;
+}

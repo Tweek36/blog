@@ -1,0 +1,24 @@
+{% extends 'main/default.html' %}
+{% load static %}
+
+{% block title %}Blogs{% endblock %}
+
+{% block link %}<link rel="stylesheet" href="{% static 'main/css/blog.css' %}">{% endblock %}
+
+
+{% block body %}
+    <main class="blogs-list">
+        {% for i in blogs.all %}
+            <div class="blogs-list__blog">
+                <h1 class="blog__title">{{ i.title }}</h1>
+                <div class="blog__info">
+                    <span>{{i.author}}</span>
+                    <span>{{i.posted}}</span>
+                </div>
+                <img src="../media/{{ i.img }}">
+                <p class="blog__description">{{i.description}}</p>
+                <a href="{% url 'blog-detail' i.id %}" class="blog__reed-more">Read more...</a>
+            </div>
+        {% endfor %}
+    </main>
+{% endblock %}

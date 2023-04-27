@@ -1,0 +1,18 @@
+{% extends 'main/default.html' %}
+{% load static %}
+
+{% block title %}Add blog{% endblock %}
+
+{% block body %}
+    <main class="add-blog">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for i in add_blog %}
+                <div class="add-blog__element">
+                    {{ i }}
+                </div>
+            {% endfor %}
+            <button type="submit" class="add-blog__button" id="submit" name="submit" value="add_blog">Add</button>
+        </form>
+    </main>
+{% endblock %}

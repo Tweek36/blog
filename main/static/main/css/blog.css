@@ -1,0 +1,47 @@
+.blogs-list__blog {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.blogs-list__blog img {
+    max-height: 40vh;
+}
+
+.blogs-list__blog a {
+    color: #33bba4;
+}
+
+.coment__textarea textarea {
+    max-width: -webkit-fill-available;
+    min-width: -webkit-fill-available;
+    max-height: 175px;
+    min-height: 175px;
+    margin-bottom: 5px;
+}
+
+.coment {
+    padding: 3px 10px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 10px 0;
+}
+
+.info__user {
+    color: #33bba4;
+    margin-right: 7px;
+}
+
+.info__posted {
+    color: #33bba486;
+}
+
+.videos {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.videos video {
+    height: 50%;
+}

@@ -1,0 +1,31 @@
+{% extends 'main/default.html' %}
+{% load static %}
+
+{% block title %}Feedback{% endblock %}
+
+{% block link %}<link rel="stylesheet" href="{% static 'main/css/feedback.css' %}">{% endblock %}
+
+{% block body %}
+    <main class="feedback">
+        {% if form != None %}
+        <h1>Fill out the questionnaire</h1>
+        <form method="post" class="form" name="feedback">
+            {% csrf_token %}
+            {% for i in form %}
+                <div class="form__element">
+                    <label for="{{i.id_for_label}}"> {{i.label}} </label>
+                    {{ i }}
+                </div>
+            {% endfor %}
+            <button type="submit" name="submit" class="submit" value="feedback">Submit</button>
+        </form>
+        {% else %}
+            {% for key, value in data.items %}
+                <div class="form__element">
+                    <label for="{{key}}">{{key}}:</label>
+                    <span class="form__response">{{value}}</span>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </main>
+{% endblock %}

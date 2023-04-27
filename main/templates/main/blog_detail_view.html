@@ -1,0 +1,43 @@
+{% extends 'main/default.html' %}
+{% load static %}
+
+{% block title %}{{blog.title}}{% endblock %}
+
+{% block link %}<link rel="stylesheet" href="{% static 'main/css/blog.css' %}">{% endblock %}
+
+{% block body %}
+    <main>
+        <div class="blogs-list__blog">
+            <h1 class="blog__title">{{ blog.title }}</h1>
+            <div class="blog__info">
+                <span>{{blog.author}}</span>
+                <span>{{blog.posted}}</span>
+            </div>
+            <img src="../media/{{ blog.img }}">
+            <p class="blog__description">{{blog.description}}</p>
+            <p class="blog__content">{{blog.content}}</p>
+        </div>
+        <div class="comet-section">
+            <form method="post">
+                {% csrf_token %}
+                <div class="coment__textarea">
+                    {{coment_form.coment}}
+                </div>
+                <button type="submit" name="submit" value="coment">Coment</button>
+            </form>
+            <div class="coments">
+                {% for coment in blog.coments.all reversed  %}
+                    <div class="coment">
+                        <div class="coment__info">
+                            <span class="info__user">{{coment.user}}</span>
+                            <span class="info__posted">{{coment.posted}}</span>
+                        </div>
+                        <p class="coment__text">
+                            {{coment.coment}}
+                        </p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+{% endblock %}

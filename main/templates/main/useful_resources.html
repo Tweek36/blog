@@ -1,0 +1,18 @@
+{% extends 'main/default.html' %}
+{% load static %}
+
+{% block title %}Useful resources{% endblock %}
+
+{% block link %}<link rel="stylesheet" href="{% static 'main/css/blog.css' %}">{% endblock %}
+
+
+{% block body %}
+    <main class="videos">
+        <video controls>        
+            <source poster="{% static 'main/img/logo.png' %}" src="../media/video/Intel.mp4" type="video/mp4">
+        </video>
+        <video controls>        
+            <source poster="{% static 'main/img/logo.png' %}" src="../media/video/NVIDIA.mp4" type="video/mp4">
+        </video> 
+    </main>
+{% endblock %}
