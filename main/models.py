@@ -18,7 +18,7 @@ admin.site.register(Coment)
 class Blog(models.Model):
     title = models.CharField(max_length=100,
                              unique_for_date="posted",)
-    coments = models.ManyToManyField(Coment, null=True)
+    coments = models.ManyToManyField(Coment, null=True, blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     img = models.ImageField(upload_to='img/', blank=True)
     description = models.TextField()
